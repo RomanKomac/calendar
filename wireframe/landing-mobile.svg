@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 350 560" enable-background="new 0 0 350 560" xml:space="preserve">
+<rect fill="#FFFFFF" stroke="#B3B3B3" stroke-miterlimit="10" width="350" height="560"/>
+<rect fill="#E6E6E6" stroke="#B3B3B3" stroke-miterlimit="10" width="350" height="48.5"/>
+<rect x="17.3" y="9.3" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="78" height="29.7"/>
+<rect x="25" y="18.5" fill="none" width="62" height="19"/>
+<text transform="matrix(1 0 0 1 32.6006 27.02)" font-family="'MyriadPro-Regular'" font-size="12">Site Logo</text>
+<g>
+	<rect y="48.5" fill="#CCCCCC" width="350" height="511.5"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="0" y1="560" x2="350" y2="48.5"/>
+	<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="350" y1="560" x2="0" y2="48.5"/>
+</g>
+<rect x="22" y="160.6" fill="#E6E6E6" stroke="#000000" stroke-miterlimit="10" width="306" height="213.4"/>
+<rect x="21.6" y="221.8" fill="none" width="306.9" height="27.2"/>
+<text transform="matrix(1 0 0 1 47.4301 238.8313)" font-family="'MyriadPro-Regular'" font-size="24">WebApp Description / Ad</text>
+<g>
+	<rect x="153.3" y="328.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="43.3" height="19"/>
+	<rect x="161" y="333.4" fill="none" width="30.6" height="11.6"/>
+	<text transform="matrix(1 0 0 1 160.9993 341.9186)" font-family="'MyriadPro-Regular'" font-size="12">Login</text>
+</g>
+<g>
+	<rect x="151.2" y="302.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="47.6" height="19"/>
+	<rect x="154.9" y="307.4" fill="none" width="43" height="14.4"/>
+	<text transform="matrix(1 0 0 1 154.8753 315.9425)" font-family="'MyriadPro-Regular'" font-size="12">Register</text>
+</g>
+</svg>
