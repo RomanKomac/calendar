@@ -1,0 +1,165 @@
+/* Author: Roman Komac 
+** simple implementation, bootstrap-like css
+*/
+
+.grid {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	white-space: nowrap;
+}
+
+.grid>* {
+	float: left;
+}
+
+.bg-blue {
+	background-color: blue;
+}
+
+.bg-pink {
+	background-color: pink;
+}
+
+.bg-red {
+	background-color: red;
+}
+
+#test_img {
+	background-image: url("../img/Calendar_complete.svg");
+	background-size: 200%, 100%;
+	background-repeat: no-repeat;
+	background-position: 100%, 0%;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+#test_img:hover {
+	background-position: 0%, 0%;
+}
+
+@media (min-width : 1101px) {
+	/* Widescreen */
+	hlp {
+		font-size: 20px;
+	}
+	hlp::after {
+		content: " (widescreen size)";
+	}
+	.w1  { width: 8.333%; }
+	.w2  { width: 16.666%; }
+	.w3  { width: 25%; }
+	.w4  { width: 33.333%; }
+	.w5  { width: 41.666%; }
+	.w6  { width: 50%; }
+	.w7  { width: 58.333%; }
+	.w8  { width: 66.666%; }
+	.w9  { width: 75%; }
+	.w10 { width: 83.333%; }
+	.w11 { width: 91.666%; }
+	.w12 { width: 100%; }
+	.w1, .w2, .w3, .w4, .w5, .w6, .w7, .w8, .w9, .w10, .w11, .w12{
+		height: 50px;
+		display: inline-block;
+		padding: 0px;
+		margin: 0px;
+	}
+	.w-hide {
+		display: none;
+	}
+}
+
+@media (min-width : 780px) and (max-width: 1100px) {
+	/* Desktop */
+	hlp {
+		font-size: 25px;
+	}
+	hlp::after {
+		content: " (tablet size)";
+	}
+	.l1  { width: 8.333%; }
+	.l2  { width: 16.666%; }
+	.l3  { width: 25%; }
+	.l4  { width: 33.333%; }
+	.l5  { width: 41.666%; }
+	.l6  { width: 50%; }
+	.l7  { width: 58.333%; }
+	.l8  { width: 66.666%; }
+	.l9  { width: 75%; }
+	.l10 { width: 83.333%; }
+	.l11 { width: 91.666%; }
+	.l12 { width: 100%; }
+	.l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9, .l10, .l11, .l12{
+		height: 50px;
+		display: inline-block;
+		padding: 0px;
+		margin: 0px;
+	}
+	.l-hide {
+		display: none;
+	}
+}
+
+@media (min-width : 480px) and (max-width : 780px) {
+	/* Tablice */
+	hlp {
+		font-size: 30px;
+	}
+	hlp::after {
+		content: " (smaller tablet size)";
+	}
+	.m1  { width: 8.333%; }
+	.m2  { width: 16.666%; }
+	.m3  { width: 25%; }
+	.m4  { width: 33.333%; }
+	.m5  { width: 41.666%; }
+	.m6  { width: 50%; }
+	.m7  { width: 58.333%; }
+	.m8  { width: 66.666%; }
+	.m9  { width: 75%; }
+	.m10 { width: 83.333%; }
+	.m11 { width: 91.666%; }
+	.m12 { width: 100%; }
+	.m1, .m2, .m3, .m4, .m5, .m6, .m7, .m8, .m9, .m10, .m11, .m12{
+		height: 80px;
+		display: inline-block;
+		padding: 0px;
+		margin: 0px;
+	}
+	.m-hide {
+		display: none;
+	}
+}
+
+
+@media (min-width : 240px) and (max-width: 480px) {
+	/* Mobilne naprave */
+	hlp {
+		font-size: 40px;
+	}
+	hlp::after {
+		content: " (mobile size)";
+	}
+	.s1  { width: 8.333%; }
+	.s2  { width: 16.666%; }
+	.s3  { width: 25%; }
+	.s4  { width: 33.333%; }
+	.s5  { width: 41.666%; }
+	.s6  { width: 50%; }
+	.s7  { width: 58.333%; }
+	.s8  { width: 66.666%; }
+	.s9  { width: 75%; }
+	.s10 { width: 83.333%; }
+	.s11 { width: 91.666%; }
+	.s12 { width: 100%; }
+	.s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8, .s9, .s10, .s11, .s12{
+		height: 100px;
+		display: inline-block;
+		padding: 0px;
+		margin: 0px;
+	}
+	.s-hide {
+		display: none;
+	}
+}
