@@ -2,29 +2,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>eKoledar</title>
+		<title>Admin | eKoledar</title>
 		<meta name="description" content="Spletna aplikacija/koledar" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/responsive.css" />
 		<link rel="stylesheet" href="./css/default.css" />
+		<script type="text/javascript" src="./script/mingular.js" /></script>
+		<script type="text/javascript" src="./script/main.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
 	</head>
 	<body>
-		<div>
+		<div data-mng-app="my-app" data-mng-ctrl="my-ctrl">
 			<header id="mainbar">
 				<div id="mainlogo"></div>
 				<div id="maintitle">eKoledar</div>
-				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
-				<form class="inline right-abs">
-					<input type="submit" value="Login" class="submit"></input>
-				</form>
-				<form class="inline right-abs">
-					<input type="submit" value="Register" class="submit"></input>
-				</form>
 			</header>
-			<main id="main">
+			<main>
 			</main>
-			<footer>
+			<footer data-simple-dir>
 			</footer>
 		</div>
 	</body>

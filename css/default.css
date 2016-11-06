@@ -1,0 +1,75 @@
+html, body {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: Oswald;
+}
+
+#mainbar {
+	box-sizing: border-box;
+	width: 100%;
+	height: 60px;
+	background-color: #ddd;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 15px;
+	position: relative;
+	z-index: 3;
+}
+
+#mainlogo {
+	width: 50px;
+	height: 50px;
+	background: url("../svg/calendar.svg");
+	background-size: 200% 100%;
+	margin: 0px;
+	float: left;
+	display: inline-block;
+}
+
+#maintitle {
+	font-size: 20px;
+	height: 20px;
+	margin: 0px;
+	margin-top: 10px;
+	float: left;
+	display: inline-block;
+}
+
+#main {
+	top: 0px;
+	position: absolute;
+	background: url("../img/calendar-bg.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	z-index: 2;
+}
+
+#main::after {
+	content: " ";
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0.2;
+	background-color: #000;
+}
+
+.submit {
+	font-family: Oswald;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #ccc;
+	margin: 8px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.right-abs {
+	float: right;
+	position: relative;
+}
