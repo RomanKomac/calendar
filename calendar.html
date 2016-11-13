@@ -31,6 +31,21 @@
 			</div>
 			<main id="main-content">
 				<div id="sidebar" class="s-hide m-hide">
+					<div class="side-list">
+						<div id="circles"></div>
+						<ul data-dynamic-circles class="side-list-c">
+							<li data-mng-repeat="circle in circles" class="side-list-e">
+								
+							</li>
+						</ul>
+					</div>
+					<div class="side-list">
+						<div id="h"></div>
+						<ul data-dynamic-24h class="side-list-c">
+							<li data-mng-repeat="event in events" class="side-list-e">
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div id="topbar" class="s-hide m-hide">
 					<form action="" class="time-period-form">
@@ -56,7 +71,7 @@
 				</div>
 				<div id="mainb">
 					<div class="grid full-height gw7 gl7 m12 a12" data-dynamic-grid>
-						<div class="w1 l1 full-height solid-border" mng-repeat>
+						<div class="w1 l1 full-height solid-border" data-mng-repeat="day in days">
 						</div>
 					</div>
 				</div>
