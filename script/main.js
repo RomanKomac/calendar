@@ -1,8 +1,16 @@
 var app = new mingular.app("my-app");
 
 app.controller("my-ctrl", function(_scope){
-	_scope.somedata="test!";
 	
+});
+
+app.directive("dynamic-grid", function(){
+	return {
+		scope : true,
+		link : function(_scope, _elem, _attrs){
+			_scope.events = ["one", "two"];
+		}
+	}
 });
 
 app.directive("commented", ['_element', function(_element){

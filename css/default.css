@@ -7,19 +7,35 @@ html, body {
 	font-family: Oswald;
 }
 
+#footerbar {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 15px;
+	position: absolute;
+	bottom: 0px;
+	z-index: 4;
+	border-top: 1px solid #aaa;
+}
+
 #mainbar {
 	box-sizing: border-box;
 	width: 100%;
 	height: 60px;
-	background-color: #ddd;
+	background-color: #fff;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 15px;
 	position: relative;
 	z-index: 3;
+	border-bottom: 1px solid #aaa;
 }
 
 #mainlogo {
+	font-family: Oswald;
 	width: 50px;
 	height: 50px;
 	background: url("../svg/calendar.svg");
@@ -48,21 +64,233 @@ html, body {
 	z-index: 2;
 }
 
-#main::after {
+.dentist {
+	background: url("../svg/tooth.svg");
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	position: absolute;
+	right: -30px;
+	top: -30px;
+	-ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+	-o-transform: rotate(20deg); /* Opera */
+    transform: rotate(20deg);
+}
+
+#main::before {
 	content: " ";
-	position:absolute;
+	top: 0px;
+	position: absolute;
 	width: 100%;
 	height: 100%;
-	opacity: 0.2;
-	background-color: #000;
+	opacity: 0.8;
+	background-color: #fff;
+}
+
+#promo {
+	box-sizing: border-box;
+	width: 400px;
+	height: 500px;
+	white-space: normal;
+	font-size: 25px;
+	color: white;
+	background-color: #eee;
+	border-radius: 0px 0px 0px 40px;
+	border: 1px solid #555;
+	padding: 20px;
+	padding-top: 60px;
+}
+
+#promo::before {
+	box-sizing: border-box;
+	content: " ";
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #3f85f6;
+	border-radius: 0px 0px 100px 40px;
+	border: 1px solid #555;
+	z-index: -1;
+}
+
+#promo::after {
+	box-sizing: border-box;
+	content: " ";
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	background-color: #aaa;
+	z-index: -1;
+}
+
+#promo-mobile {
+	white-space: normal;
+	font-size: 30px;
+	color: white;
+	padding: 15px;
+	padding-top: 55px;
+	background-color: #eee;
+	border-radius: 0px 0px 0px 40px;
+	border: 1px solid #555;
+	width: 100%;
+}
+
+#promo-mobile::before {
+	box-sizing: border-box;
+	content: " ";
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #3f85f6;
+	border-radius: 0px 0px 100px 40px;
+	border: 1px solid #555;
+	z-index: -1;
+}
+
+#promo-mobile::after {
+	box-sizing: border-box;
+	content: " ";
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	background-color: #aaa;
+	z-index: -1;
+}
+
+#submit-box-mobile {
+	width: 100%;
+	height: 60px;
+	position: relative;
+	text-align: center;
+	margin-top: 20px;
+}
+
+floater {
+	box-sizing: border-box;
+	height: 70px;
+	width: 70px;
+	position: fixed;
+	padding: 0px;
+	border-radius: 35px;
+	border: 5px solid #458ff6;
+	color: white;
+	background: url("../svg/pencil.svg");
+	z-index: 5;
+}
+
+#float-button-tab {
+	right: 30px;
+	bottom: 30px;
+}
+
+#float-button-mob {
+	left: 50%;
+	bottom: 40px;
+	height: 80px;
+	width: 80px;
+	border-radius: 40px;
+	transform: translate(-50%, 0%);
+}
+
+#main-content {
+	position: absolute;
+	top: 60px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 60px);
+	z-index: 2;
+}
+
+#sidebar {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 200px;
+	background-color: #458ff6;
+}
+
+#topbar {
+	position: absolute;
+	left: 200px;
+	top: 0px;
+	height: 30px;
+	width: calc(100% - 200px);
+	background-color: #458ff6;
+}
+
+#mainb {
+	position: absolute;
+	left: 200px;
+	top: 30px;
+	height: calc(100% - 30px);
+	width: calc(100% - 200px);
+	overflow: hidden;
+}
+
+#main-bg {
+	position: absolute;
+	top: 60px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 60px);
+	background: url("../img/calendar-bg.jpg");
+	background-size: cover;
+}
+
+#main-bg::before {
+	content: " ";
+	top: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0.98;
+	background-color: #fff;
+}
+
+.solid-border {
+	border: 1px solid #eee;
+}
+
+.turn-page {
+	font-size: 240px;
+	opacity: 0.1;
+}
+
+.relative {
+	position: relative;
+}
+
+.full-height {
+	height: 100% !important;
 }
 
 .submit {
 	font-family: Oswald;
 	height: 30px;
-	border-radius: 5px;
-	background-color: #ccc;
+	border-radius: 7px;
+	background-color: #458ff6;
 	margin: 8px;
+	color: white;
+}
+
+.submit-mobile {
+	font-family: Oswald;
+	height: 50px;
+	border-radius: 7px;
+	background-color: #458ff6;
+	margin: auto;
+	color: white;
+	font-size: 20px;
 }
 
 .inline {
@@ -72,4 +300,85 @@ html, body {
 .right-abs {
 	float: right;
 	position: relative;
+}
+
+.left-abs {
+	float: left;
+	position: relative;
+}
+
+.search {
+	margin-left: 100px;
+}
+
+.center-wrap {
+	position: relative;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.hor-align-mobile {
+	position: relative;
+}
+
+
+
+.time-period {
+	position: relative;
+	list-style-type:none;
+	height: 30px;
+	margin: 0px;
+	padding:0;
+}
+
+.time-period-form {
+	position: absolute;
+	right: 200px;
+	top: 0px;
+	width: 240px;
+	height: 30px;
+	padding:0;
+}
+
+.time-period>li {
+	float:left;
+	width:60px;
+	height:30px;
+	position:relative;
+	text-align: center;
+	color: white;
+}
+
+.time-period label, .time-period input {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+.time-period input[type="radio"] {
+	display: none;
+	z-index:5;
+}
+
+.time-period input[type="radio"]:checked + label {
+	background: #357fd6;
+}
+
+.time-period label {
+	padding:1px;
+	cursor:pointer;
+	z-index:4;
+	background: #458ff6;
+}
+
+.time-period label:hover {
+	background:#357fd6;
 }

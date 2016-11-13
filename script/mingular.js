@@ -35,10 +35,6 @@
 ** These declarations are core to any webapp
 */
 
-var services = {
-	
-};
-
 var mingular = {
 	app : function(name, conf){
 		this.name = name;
@@ -61,8 +57,9 @@ var mingular = {
 				return {
 					scope: true,
 					link: function(_scope, _elem, _attrs){
-						var pscope = _scope.parent.scope;
+						var pscope = _scope.parent;
 						console.log(_elem.parentNode);
+						console.log(_scope);
 						console.log(pscope);
 						for( var x = 0; x < _attrs.length; x++ ){
 							if( _attrs[x].name.match("mng-repeat") ){

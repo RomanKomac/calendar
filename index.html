@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>eKoledar</title>
+		<title>eCalendar</title>
 		<meta name="description" content="Spletna aplikacija/koledar" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/responsive.css" />
@@ -13,18 +13,47 @@
 		<div>
 			<header id="mainbar">
 				<div id="mainlogo"></div>
-				<div id="maintitle">eKoledar</div>
+				<div id="maintitle">eCalendar</div>
 				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
-				<form class="inline right-abs">
-					<input type="submit" value="Login" class="submit"></input>
-				</form>
-				<form class="inline right-abs">
-					<input type="submit" value="Register" class="submit"></input>
-				</form>
+				<div class="s-hide m-hide">
+					<form class="inline right-abs" action="./login.html" method="get">
+						<input type="submit" value="Login" class="submit"></input>
+					</form>
+					<form class="inline right-abs" action="./register.html" method="get">
+						<input type="submit" value="Register" class="submit"></input>
+					</form>
+				</div>
 			</header>
-			<main id="main">
+			<main id="main" class="grid">
+				<div id="promo" class="center s-hide m-hide">
+					<div class="center turn-page">31</div>
+					<div class="dentist"></div>
+					Never miss another appointment with your dentist. With eCalendar you can plan everything in advance and avoid getting into pesky situations. <br/> Join today, be thankful tomorrow! <br/>
+					<!--Never forget your friend's birthday. With eCalendar you can plan everything in advance and avoid getting into pesky situations. Join today, be thankful tomorrow! <br/>
+					Never miss a party. With eCalendar you can plan everything in advance. Join today, be thankful tomorrow! <br/>
+					Never be late again. With eCalendar you can plan everything in advance and avoid getting into pesky situations. Join today, be thankful tomorrow! <br/>-->
+				</div>
+				<div class="s2 m2 l-hide w-hide full-height"></div>
+				<div class="s8 m8 l-hide w-hide relative full-height">
+					<div id="promo-mobile" class="center">
+						<div class="dentist"></div>
+						<div class="center turn-page">31</div>
+						<div>
+							Never miss another appointment with your dentist. With eCalendar you can plan everything in advance and avoid getting into pesky situations. <br/> Join today, be thankful tomorrow! <br/>
+						</div>
+						<div id="submit-box-mobile">
+							<form class="inline hor-align-mobile" action="./login.html" method="get">
+								<input type="submit" value="Login" class="submit-mobile"></input>
+							</form>
+							<form class="inline hor-align-mobile" action="./register.html" method="get">
+								<input type="submit" value="Register" class="submit-mobile"></input>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="s2 m2 l-hide w-hide full-height"></div>
 			</main>
-			<footer>
+			<footer id="footerbar" class="s-hide m-hide l-hide">
 			</footer>
 		</div>
 	</body>

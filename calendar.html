@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>eKoledar</title>
+		<title>Events | eCalendar</title>
 		<meta name="description" content="Spletna aplikacija/koledar" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./css/responsive.css" />
@@ -15,12 +15,60 @@
 		<div data-mng-app="my-app" data-mng-ctrl="my-ctrl">
 			<header id="mainbar">
 				<div id="mainlogo"></div>
-				<div id="maintitle">eKoledar</div>
+				<div id="maintitle">eCalendar</div>
+				<form class="inline left-abs search s-hide m-hide" action="./search.php" method="get">
+					<input type="text" placeholder="Search" name="search">
+					<input type="submit" value="Search" class="submit"></input>
+				</form>
+				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
+				<div class="s-hide m-hide">
+					<form class="inline right-abs" action="./logout.php" method="get">
+						<input type="submit" value="Logout" class="submit"></input>
+					</form>
+				</div>
 			</header>
-			<main>
+			<div id="main-bg">
+			</div>
+			<main id="main-content">
+				<div id="sidebar" class="s-hide m-hide">
+				</div>
+				<div id="topbar" class="s-hide m-hide">
+					<form action="" class="time-period-form">
+						<ul class="time-period">
+							<li>
+								<input type="radio" id="day" name="period" />
+								<label for="day">Day</label>
+							</li>
+							<li>
+								<input type="radio" id="week" name="period" checked/>
+								<label for="week">Week</label>
+							</li>
+							<li>
+								<input type="radio" id="month" name="period" />
+								<label for="month">Month</label>
+							</li>
+							<li>
+								<input type="radio" id="agenda" name="period" />
+								<label for="agenda">Agenda</label>
+							</li>
+						</ul>
+					</form>
+				</div>
+				<div id="mainb">
+					<div class="grid full-height gw7 gl7 m12 a12" data-dynamic-grid>
+						<div class="w1 l1 full-height solid-border" mng-repeat>
+						</div>
+					</div>
+				</div>
 			</main>
-			<footer data-simple-dir>
+			<footer id="footerbar" class="s-hide m-hide l-hide">
 			</footer>
+			<floater id="float-button-tab" class="w-hide m-hide s-hide">
+				
+			</floater>
+			<floater id="float-button-mob" class="w-hide l-hide">
+				
+			</floater>
 		</div>
 	</body>
 </html>
