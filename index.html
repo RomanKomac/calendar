@@ -15,13 +15,76 @@
 				<div id="mainlogo"></div>
 				<div id="maintitle">eCalendar</div>
 				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
-				<div class="s-hide m-hide">
-					<form class="inline right-abs" action="./login.html" method="get">
-						<input type="submit" value="Login" class="submit"></input>
-					</form>
-					<form class="inline right-abs" action="./register.html" method="get">
-						<input type="submit" value="Register" class="submit"></input>
-					</form>
+				<div>
+					<input type="checkbox" name="checkbox" id="register" class="reg" value="value">
+					<label for="register" class="submit inline right-abs s-hide m-hide">Register</label>
+					
+					<input type="checkbox" name="checkbox" id="login" class="log" value="value">
+					<label for="login" class="submit inline right-abs s-hide m-hide">Login</label>
+					
+					<div class="registerWindow">
+						<div class="curtain"></div>
+						<div class="center-wrap full-height">
+							<div class="inputWindow center regInputWindow">
+								<label for="register" class="close">X</label>
+								<form class="inline right-abs" action="./login.html" method="post">
+									<noscript>
+										<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"></input>
+									</noscript>
+									
+									<label for="uname">Username</label>
+									<input type="text" name="username" placeholder="Username" id="uname" class="input-text full-width marg"></input>
+									
+									<label for="mail">Mail</label>
+									<input type="email" name="mail" placeholder="Mail" id="mail" class="input-text full-width marg"></input>
+									
+									<label for="gnd">Gender</label>
+									<ul class="gender-select marg" id="gnd">
+										<li>
+											<input type="radio" id="male" name="period" checked/>
+											<label for="male">Male</label>
+										</li>
+										<li>
+											<input type="radio" id="female" name="period"/>
+											<label for="female">Female</label>
+										</li>
+										<li>
+											<input type="radio" id="other" name="period" />
+											<label for="other">Other</label>
+											<input type="text" name="genderopt" placeholder="Custom" id="genderopt" class="input-text full-width"></input>
+										</li>
+									</ul>
+									
+									<label for="pwd">Password</label>
+									<input type="password" name="password1" placeholder="Input password" class="input-text full-width marg"></input>
+									<input type="password" name="password2" placeholder="Reinput password" class="input-text full-width"></input>
+									<div id="submitCenter" class="center-wrap">
+										<input type="submit" value="Register" class="submit center no-margin"></input>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					<div class="loginWindow">
+						<div class="curtain"></div>
+						<div class="center-wrap full-height">
+							<div class="inputWindow center">
+								<label for="login" class="close">X</label>
+								<form class="inline right-abs" action="./login.html" method="post">
+									<noscript>
+										<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"></input>
+									</noscript>
+									<div class="userFrame"></div>
+									<input type="text" name="username" placeholder="Username" class="input-text full-width"></input>
+									<input type="password" name="password" placeholder="Password" class="input-text full-width"></input>
+									<div id="submitCenter" class="center-wrap">
+										<input type="submit" value="Login" class="submit center no-margin"></input>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</header>
 			<main id="main" class="grid">
@@ -38,17 +101,11 @@
 					<div id="promo-mobile" class="center">
 						<div class="dentist"></div>
 						<div class="center turn-page">31</div>
-						<div>
+						<div id="desc">
 							Never miss another appointment with your dentist. With eCalendar you can plan everything in advance and avoid getting into pesky situations. <br/> Join today, be thankful tomorrow! <br/>
 						</div>
-						<div id="submit-box-mobile">
-							<form class="inline hor-align-mobile" action="./login.html" method="get">
-								<input type="submit" value="Login" class="submit-mobile"></input>
-							</form>
-							<form class="inline hor-align-mobile" action="./register.html" method="get">
-								<input type="submit" value="Register" class="submit-mobile"></input>
-							</form>
-						</div>
+						<label for="register" class="submit-mobile">Register</label>
+						<label for="login" class="submit-mobile">Login</label>
 					</div>
 				</div>
 				<div class="s2 m2 l-hide w-hide full-height"></div>

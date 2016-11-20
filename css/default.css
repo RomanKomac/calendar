@@ -116,6 +116,8 @@ html, body {
 	z-index: -1;
 }
 
+
+
 #promo::after {
 	box-sizing: border-box;
 	content: " ";
@@ -138,6 +140,7 @@ html, body {
 	border-radius: 0px 0px 0px 40px;
 	border: 1px solid #555;
 	width: 100%;
+	position: relative;
 }
 
 #promo-mobile::before {
@@ -184,6 +187,7 @@ floater {
 	border: 5px solid #458ff6;
 	color: white;
 	background: url("../svg/pencil.svg");
+	cursor: pointer;
 	z-index: 5;
 }
 
@@ -208,6 +212,47 @@ floater {
 	width: 100%;
 	height: calc(100% - 60px);
 	z-index: 2;
+}
+
+#main-content>input[type="radio"] {
+	display: none;
+}
+
+#groups-users:checked ~ #detailed>#detailed-pic{
+	background-image: url("../svg/person.svg");
+}
+#groups-users:checked ~ #detailed>#detailed-data-user{
+	display: block;
+}
+#groups-users:checked ~ #detailed>#detailed-data-circle, #groups-users:checked ~ #detailed>#detailed-data-event{
+	display: none;
+}
+
+#groups-circles:checked  ~ #detailed>#detailed-pic {
+	background-image: url("../svg/circles.svg");
+}
+#groups-circles:checked ~ #detailed>#detailed-data-circle{
+	display: block;
+}
+#groups-circles:checked ~ #detailed>#detailed-data-user, #groups-circles:checked ~ #detailed>#detailed-data-event{
+	display: none;
+}
+
+#groups-events:checked  ~ #detailed>#detailed-pic {
+	background-image: url("../svg/pencil-transp.svg");
+}
+#groups-events:checked ~ #detailed>#detailed-data-event{
+	display: block;
+}
+#groups-events:checked ~ #detailed>#detailed-data-circle, #groups-events:checked ~ #detailed>#detailed-data-user{
+	display: none;
+}
+
+#groups-notifications:checked  ~ #detailed>#detailed-pic {
+	background-image: url("../svg/bell.svg");
+}
+#groups-notifications:checked ~ #detailed>#detailed-data-user, #groups-notifications:checked ~ #detailed>#detailed-data-circle, #groups-notifications:checked ~ #detailed>#detailed-data-event{
+	display: none;
 }
 
 #sidebar {
@@ -237,6 +282,52 @@ floater {
 	overflow: hidden;
 }
 
+#mainc  {
+	position: absolute;
+	left: 200px;
+	top: 30px;
+	height: calc(100% - 30px);
+	width: calc(100% - 450px);
+	overflow: hidden;
+}
+
+#detailed {
+	position: absolute;
+	right: 0px;
+	top: 30px;
+	height: calc(100% - 30px);
+	width: 250px;
+	overflow: hidden;
+	background-color: #458ff6;
+}
+
+#detailed-pic {
+	position: relative;
+	margin: 50px;
+	width: 150px;
+	height: 150px;
+	background-size: 150px 150px;
+	border-radius: 50%;
+}
+
+#detailed-data-user, #detailed-data-circle, #detailed-data-event {
+	position: relative;
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 150px;
+	height: 300px;
+}
+
+
+#mainm {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: calc(100% - 30px);
+	width: 100%;
+	overflow: hidden;
+}
+
 #main-bg {
 	position: absolute;
 	top: 60px;
@@ -260,6 +351,7 @@ floater {
 #circles {
 	position: absolute;
 	top: -35px;
+	left: 10px;
 	background: url("../svg/circles.svg");
 	background-size: cover;
 	width: 30px;
@@ -270,7 +362,7 @@ floater {
 #circles::after {
 	color: white;
 	content: "CIRCLES";
-	left: 50px;
+	left: 40px;
 	margin-top: 3px;
 	position: absolute;
 }
@@ -278,6 +370,7 @@ floater {
 #h {
 	position: absolute;
 	top: -35px;
+	left: 10px;
 	background: url("../svg/bell.svg");
 	background-size: cover;
 	width: 30px;
@@ -287,10 +380,71 @@ floater {
 #h::after {
 	color: white;
 	content: "NEXT 24H";
-	left: 50px;
+	left: 40px;
 	width: 70px;
 	margin-top: 3px;
 	position: absolute;
+}
+
+.registerWindow, .loginWindow, .createWindow {
+	z-index: 5;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: none;
+	pointer-events: none;
+}
+
+.registerWindow:before {
+}
+
+.registerWindow>div.curtain, .loginWindow>div.curtain, .createWindow>div.curtain{
+	z-index: 5;
+	opacity: 0.8;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #aaaaaa;
+}
+
+.reg, .log, .crt {
+	display: none;
+	padding: 5px;
+	font-size: 10px;
+}
+
+.reg:checked ~ .registerWindow {
+	display: block;
+}
+
+.log:checked ~ .loginWindow  {
+	display: block;
+}
+
+.crt:checked ~ .createWindow {
+	display: block;
+}
+
+.inputWindow {
+	height: 400px;
+	width: 350px;
+	background-color: white;
+	z-index: 6;
+	box-sizing: border-box;
+	padding: 80px;
+	pointer-events: auto;
+}
+
+.close {
+	position: absolute;
+	top: 6px;
+	right: 13px;
+}
+
+.no-overflow {
+	overflow: hidden !important;
 }
 
 .side-list {
@@ -308,7 +462,27 @@ floater {
 	width: 100%;
 	height: 100%;
 	margin: 0px;
-	overflow-y: scroll;
+	margin-top: 30px;
+}
+
+.side-list-c>li {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #357fd6;
+	background: #458ff6;
+	padding: 9px;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+.side-list-c>li:hover {
+	background: #357fd6;
+}
+
+.side-list-c>li>label {
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
 }
 
 .side-list-e {
@@ -333,6 +507,55 @@ floater {
 	height: 100% !important;
 }
 
+.full-width {
+	width: 100% !important;
+}
+
+.input-text {
+	height: 20px;
+	font-size: 15px;
+}
+
+#submitCenter {
+	margin: 0px;
+	height: 60px;
+	width: 100%;
+}
+
+#submitCenter>input {
+	margin: 0px !important;
+	width: 60px;
+	height: 35px;
+}
+
+.regInputWindow {
+	padding-top: 30px !important;
+}
+
+.marg {
+	margin-bottom: 8px !important;
+}
+
+.create {
+	background-color: #458ff6;
+	margin: 0 !important;
+	cursor: pointer;
+}
+
+.create:hover {
+	background-color: #357fd6;
+}
+
+.userFrame {
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 20%;
+    padding-top: 60%;
+	border-radius: 50%;
+	background-image: url("../svg/person.svg");
+}
+
 .submit {
 	font-family: Oswald;
 	height: 30px;
@@ -340,6 +563,9 @@ floater {
 	background-color: #458ff6;
 	margin: 8px;
 	color: white;
+	font-size: 15px;
+	box-sizing: border-box;
+	padding: 4px;
 }
 
 .submit-mobile {
@@ -350,6 +576,10 @@ floater {
 	margin: auto;
 	color: white;
 	font-size: 20px;
+	box-sizing: border-box;
+	padding: 5px;
+	border: 1px solid white;
+	margin: 0 auto;
 }
 
 .inline {
@@ -385,6 +615,161 @@ floater {
 	position: relative;
 }
 
+.search-form {
+	position: absolute;
+	left: 70px;
+	top: -1px;
+	width: 250px;
+	height: 30px;
+	padding:0;
+}
+
+
+.search-form>input[type="submit"] {
+	margin: 0px !important;
+	border: none;
+	cursor: pointer;
+}
+
+.search-form>input[type="submit"]:hover {
+	background-color: #357fd6;
+}
+
+.gender-select {
+	position: relative;
+	list-style-type: none;
+	height: 60px;
+	margin: 0px;
+	padding: 0;
+	
+}
+
+.gender-select>li {
+	float: left;
+	width: 33.3%;
+	height: 30px;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.gender-select label, .gender-select input {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+.gender-select input[type="radio"] {
+	display: none;
+	z-index:5;
+}
+
+.gender-select label {
+	padding:1px;
+	cursor:pointer;
+	z-index:4;
+	background: #458ff6;
+}
+
+.gender-select input[type="radio"]:checked + label {
+	background: #357fd6;
+}
+
+.gender-select input#other:checked ~ #genderopt {
+	display: block;
+}
+
+#genderopt {
+	margin-top: 35px;
+	margin-left: -200%;
+	width: 300% !important;
+	display: none;
+}
+
+#m-users-label {
+	background-image: url("../svg/person-transp.svg");
+}
+
+#m-circles-label {
+	background-image: url("../svg/circles.svg");
+}
+
+#m-events-label {
+	background-image: url("../svg/pencil-transp.svg");
+}
+
+.mobile-selection {
+	position: relative;
+	list-style-type:none;
+	height: 100%;
+	margin: 0px;
+	padding:0;
+}
+
+.mobile-selection-form {
+	position: absolute;
+	right: 50px;
+	top: 0px;
+	width: 240px;
+	height: 100%;
+	padding:0;
+}
+
+.mobile-selection>li {
+	float: left;
+	width: 60px;
+	height: 100%;
+	position: relative;
+	text-align: center;
+	color: white;
+}
+
+.mobile-selection label {
+	height: 60px;
+	width: 60px;
+	background-size: 40px 40px;
+	background-position: 10px 10px; 
+    background-repeat: no-repeat;
+	box-sizing: border-box;
+	transition: background-size .25s, background-position .25s;
+	-webkit-transition: background-size .25s, background-position .25s;
+	-o-transition: background-size .25s, background-position .25s;
+	-moz-transition: background-size .25s, background-position .25s;
+}
+
+.mobile-selection label, .mobile-selection input {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+
+.mobile-selection input[type="radio"] {
+	display: none;
+	z-index:5;
+}
+
+.mobile-selection input[type="radio"]:checked + label {
+	background-size: 50px 50px;
+	background-position: 5px 5px; 
+	border-bottom: 3px solid black;
+}
+
+.mobile-selection label {
+	padding:1px;
+	cursor:pointer;
+	z-index:4;
+}
+
+.mobile-selection label:hover {
+	background-size: 50px 50px;
+	background-position: 5px 5px; 
+}
 
 
 .time-period {
@@ -397,7 +782,7 @@ floater {
 
 .time-period-form {
 	position: absolute;
-	right: 200px;
+	right: 50px;
 	top: 0px;
 	width: 240px;
 	height: 30px;

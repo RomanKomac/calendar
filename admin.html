@@ -14,12 +14,123 @@
 	<body>
 		<div data-mng-app="my-app" data-mng-ctrl="my-ctrl">
 			<header id="mainbar">
-				<div id="mainlogo"></div>
-				<div id="maintitle">eCalendar</div>
+				<div id="mainlogo" class="s-hide"></div>
+				<div id="maintitle" class="s-hide">eCalendar</div>
+				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
+				<div>
+					<form class="inline right-abs" action="./logout.php" method="get">
+						<input type="submit" value="Logout" class="submit"></input>
+					</form>
+					<form action="" class="mobile-selection-form w-hide l-hide">
+						<ul class="mobile-selection">
+							<li>
+								<input type="radio" id="m-users" name="mob" checked/>
+								<label for="m-users" id="m-users-label"></label>
+							</li>
+							<li>
+								<input type="radio" id="m-circles" name="mob"/>
+								<label for="m-circles" id="m-circles-label"></label>
+							</li>
+							<li>
+								<input type="radio" id="m-events" name="mob"/>
+								<label for="m-events" id="m-events-label"></label>
+							</li>
+						</ul>
+					</form>
+				</div>
 			</header>
-			<main>
+			<div id="main-bg">
+			</div>
+			<main id="main-content">
+				<div id="sidebar" class="s-hide m-hide">
+					<ul class="side-list-c">
+						<li>
+							<label for="groups-users">Users</label>
+						</li>
+						<li>
+							<label for="groups-circles">Circles</label>
+						</li>
+						<li>
+							<label for="groups-events">Events</label>
+						</li>
+						<li>
+							<label for="groups-notifications">Notifications</label>
+						</li>
+					</ul>
+				</div>
+				
+				<!-- Controlling all in DOM below -->
+				<input type="radio" id="groups-users" name="mv" checked/>
+				<input type="radio" id="groups-circles" name="mv"/>
+				<input type="radio" id="groups-events" name="mv"/>
+				<input type="radio" id="groups-notifications" name="mv"/>
+				<!--/  -->
+				
+				<div id="topbar" class="s-hide m-hide">
+					<form class="s-hide m-hide search-form" action="./search.php" method="get">
+						<input type="text" placeholder="Search user" name="search" class="inline">
+						<input type="submit" value="Search" class="submit inline"></input>
+					</form>
+				</div>
+				<div id="mainc">
+					<div class="grid full-height" data-dynamic-grid-users>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l-hide m3 s-hide full-height solid-border">
+						</div>
+					</div>
+					<div class="grid full-height" data-dynamic-grid-circles>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l-hide m3 s-hide full-height solid-border">
+						</div>
+					</div>
+					<div class="grid full-height" data-dynamic-grid-events>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l4 m3 s4 full-height solid-border">
+						</div>
+						<div class="w3 l-hide m3 s-hide full-height solid-border">
+						</div>
+					</div>
+				</div>
+				<div id="detailed" class="m-hide s-hide">
+					<div id="detailed-pic">
+					</div>
+					<div id="detailed-data-user">
+						<div>USERNAME</div>
+						<div>MAIL</div>
+						<div>DATE JOINED</div>
+						<div>LAST ONLINE</div>
+						<div>EVENTS</div>
+						<div>CIRCLES</div>
+					</div>
+					<div id="detailed-data-circle">
+						<div>CIRCLE NAME</div>
+						<div>DATE CREATED</div>
+						<div>USERS</div>
+						<div>EVENTS</div>
+					</div>
+					<div id="detailed-data-event">
+						<div>EVENT NAME</div>
+						<div>DATE</div>
+						<div>TIME</div>
+						<div>LOCATION</div>
+						<div>DESCRIPTION</div>
+					</div>
+				</div>
 			</main>
-			<footer data-simple-dir>
+			<footer id="footerbar" class="s-hide m-hide l-hide">
 			</footer>
 		</div>
 	</body>
