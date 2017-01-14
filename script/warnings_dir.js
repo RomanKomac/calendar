@@ -42,10 +42,10 @@ app.directive("warnings", ["_EZintersocket", function(_EZsocket){
 				warnel_copy.innerHTML = message.content;
 				if(message.color)
 					warnel_copy.style.background = message.color;
-				_elem.appendChild(warnel_copy);
+				_elem[0].appendChild(warnel_copy);
 				num++;
 				setTimeout(function(){
-					_elem.removeChild(warnel_copy);
+					_elem[0].removeChild(warnel_copy);
 					num--;
 					if(warns.length > 0){
 						var m = warns[0];
