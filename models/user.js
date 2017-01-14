@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 	return sequelize.define('user', {
 		uid: {
 			type: DataTypes.INTEGER(11),
-			allowNull: false,
+			allowNull: true,
 			primaryKey: true
 		},
 		gid: {
@@ -19,11 +19,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		},
 		password: {
-			type: DataTypes.STRING,
+			type: DataTypes.STRING(40),
 			allowNull: false
 		},
 		salt: {
-			type: "BINARY(20)",
+			type: DataTypes.STRING(40),
 			allowNull: false
 		},
 		mail: {
