@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Events | eCalendar</title>
+		<meta name="description" content="Spletna aplikacija/koledar" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/css/responsive.css" />
+		<link rel="stylesheet" href="/css/default.css" />
+		<script type="text/javascript" src="/script/angular.js"></script>
+		<script type="text/javascript" src="/script/main.js"></script>
+		<script type="text/javascript" src="/script/warnings_dir.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="radio" id="m-circles" name="mob"/>
+		<input type="radio" id="m-events" name="mob" checked/>
+		<div data-ng-app="my-app" data-ng-ctrl="my-ctrl">
+			<figure id="warnings" data-warnings="4">
+			</figure>
+			<header id="mainbar">
+				<div id="mainlogo" class="s-hide"></div>
+				<div id="maintitle" class="s-hide">eCalendar</div>
+				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
+				<div>
+					<form class="inline right-abs" action="./logout.php" method="get">
+						<input type="submit" value="Logout" class="submit" data-mng-click="logout"/>
+					</form>
+					<form class="mobile-selection-form w-hide l-hide">
+						<ul class="mobile-selection">
+							<li>
+								<label for="m-circles" id="m-circles-label"></label>
+							</li>
+							<li>
+								<label for="m-events" id="m-events-label"></label>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</header>
+			<div id="main-bg">
+			</div>
+			<main id="main-content" data-dynamic>
+				<div id="sidebar" class="s-hide m-hide">
+					<div class="side-list">
+						<div id="circles"></div>
+						<ul class="side-list-c">
+							<li data-ng-repeat="circle in circles" class="side-list-e">
+								<div>{{circle.name}}</div>
+							</li>
+						</ul>
+					</div>
+					<div class="side-list">
+						<div id="h"></div>
+						<ul class="side-list-c">
+							<li data-ng-repeat="next in today" class="side-list-e">
+								<div>{{next.name}}</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<input type="checkbox" name="checkbox" id="create" class="crt" value="value" data-enabler>
+				<div class="createWindow">
+					<div class="curtain"></div>
+					<div class="center-wrap full-height">
+						<div class="inputWindow center">
+							<label for="create" class="close">X</label>
+							<form class="inline right-abs" action="./login.html" method="post" data-register-form>
+								<noscript>
+									<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"/>
+								</noscript>
+								
+								<label for="uname">Event name</label>
+								<input type="text" name="name" placeholder="Name" id="uname" class="input-text full-width marg" data-ng-model="evname"/>
+								
+								<label for="mail">Event description</label>
+								<input type="text" name="desc" placeholder="Description" id="mail" class="input-text full-width marg" data-ng-model="evdesc"/>
+								
+								<label for="mail">Location</label>
+								<input type="text" name="location" placeholder="Vecna pot 113" id="location" class="input-text full-width marg" data-ng-model="evlocation"/>
+								
+								<label for="mail">Date</label>
+								<input type="date" value="2016-11-01" id="startev" name="search" class="input-text full-width marg" data-ng-model="startev">
+								
+								<input type="submit" value="Add event" class="submit" data-ng-click="addEvent"/>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="topbar" class="s-hide m-hide">
+					<form class="s-hide m-hide search-form" action="./search.php" method="get">
+						<input type="date" value="2016-11-01" name="search" class="inline" data-ng-model="date">
+						<input type="submit" value="Show" class="submit inline" data-ng-click="searchEvents"/>
+					</form>
+					
+					<label for="create" class="submit inline create s-hide m-hide l-hide">Create</label>
+					
+					<form class="time-period-form">
+						<ul class="time-period">
+							<li>
+								<input data-ng-model value="day" type="radio" id="day" name="period" />
+								<label for="day">Day</label>
+							</li>
+							<li>
+								<input data-ng-model value="week" type="radio" id="week" name="period" checked/>
+								<label for="week">Week</label>
+							</li>
+							<li>
+								<input data-ng-model value="month" type="radio" id="month" name="period" />
+								<label for="month">Month</label>
+							</li>
+							<li>
+								<input data-ng-model value="agenda" type="radio" id="agenda" name="period" />
+								<label for="agenda">Agenda</label>
+							</li>
+						</ul>
+					</form>
+				</div>
+				<div id="mainb" class="m-hide s-hide" data-ng-style="{ overflow-y : flow }">
+					<div class="grid full-height gw7 gl7" data-ng-style="{ width : gridWidth }">
+						<div class="w1 l1 full-height solid-border" data-ng-repeat="day in days">
+							<div data-ng-repeat="event in day">
+								<div class="repeatable">
+									<div>{{event.name}}</div>
+									<div>{{event.desc}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="mainm" class="l-hide w-hide">
+					<div id="events-grid" class="grid full-height">
+						<div class="m12 s12 full-height solid-border">
+							<div data-ng-repeat="event in events" class="repeatable">
+								<div>{{event.name}}</div>
+								<div>{{event.desc}}</div>
+							</div>
+						</div>
+					</div>
+					<div id="circles-grid" class="grid full-height">
+						<div class="m12 s12 full-height solid-border">
+							<div data-ng-repeat="circle in circlesmob" class="repeatable">
+								<div>{{circle.name}}</div>
+								<div>{{circle.desc}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="float-button-tab" class="floater w-hide m-hide s-hide" data-ng-click="openDialog">
+				</div>
+				<div id="float-button-mob" class="floater w-hide l-hide" data-ng-click="openDialog">
+				</div>
+			</main>
+			<footer id="footerbar" class="s-hide m-hide l-hide">
+			</footer>
+		</div>
+	</body>
+</html>

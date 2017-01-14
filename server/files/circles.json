@@ -1,0 +1,75 @@
+[
+	{
+		"name" : "FRI",
+		"desc" : "Fakulteta za racunalnistvo in informatiko",
+		"events" : [
+			{
+				"id"   : 0,
+				"datestart" : "2016-11-25",
+				"dateend" : "2016-12-02",
+				"hourstart" : "00:00",
+				"hourend" : "23:59",
+				"location" : "",
+				"name" : "Studentska anketa",
+				"desc" : "Enako kot lansko leto bomo tudi letos izvedli kratko studentsko anketo ze kar sredi semestra med izvajanjem predmetov."
+			},
+			{
+				"id"   : 1,
+				"datestart" : "2016-12-02",
+				"dateend" : "2016-12-02",
+				"hourstart" : "10:00",
+				"hourend" : "13:00",
+				"location" : "Vecna pot 113",
+				"name" : "Vabljena predavanja",
+				"desc" : "V petek, 2.12. bodo v predavalnici P01 potekala vabljena predavanja o spletnih tehnologijah. Vljudno vabljeni vsi nadobudnezi."
+			}
+		]
+	},
+	{
+		"name" : "circle1",
+		"desc" : "c1desc",
+		"events" : []
+	},
+	{
+		"name" : "circle2",
+		"desc" : "c2desc",
+		"events" : []
+	},
+	{
+		"name" : "circle3",
+		"desc" : "c3desc",
+		"events" : []
+	},
+	{
+		"name" : "circle4",
+		"desc" : "c4desc",
+		"events" : []
+	},
+	{
+		"name" : "Mediatech corp",
+		"desc" : "Cheap chinese phones",
+		"events" : [
+			{
+				"id"   : 0,
+				"datestart" : "2016-12-20",
+				"dateend" : "2016-12-23",
+				"hourstart" : "10:00",
+				"hourend" : "21:00",
+				"location" : "",
+				"name" : "Special prices!",
+				"desc" : "Winter clearance special at Mediatech corp!"
+			},
+			{
+				"id"   : 1,
+				"datestart" : "2016-12-17",
+				"dateend" : "2016-12-17",
+				"hourstart" : "10:00",
+				"hourend" : "10:00",
+				"location" : "",
+				"name" : "Release of iPhake 10S",
+				"desc" : "Upcoming release of the new iPhake 10s in local stores!"
+			}
+		]
+	}
+	
+]

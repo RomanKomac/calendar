@@ -1,0 +1,49 @@
+{
+	"uporabnik1" : [
+		{
+			"id"   : 0,
+			"dateend" : "2016-11-27",
+			"hourend" : "23:59",
+			"name" : "Seminarska SP",
+			"desc" : "Rok za oddajo projekta SP"
+		},
+		{
+			"id"   : 1,
+			"dateend" : "2016-11-27",
+			"hourend" : "23:59",
+			"name" : "Seminarska RGTI",
+			"desc" : "Rok za oddajo projekta RGTI"
+		}
+	],
+	"uporabnik2" : [
+		{
+			"id"   : 0,
+			"datestart" : "2016-11-30",
+			"dateend" : "2016-12-02",
+			"hourend" : "23:59",
+			"name" : "Event1",
+			"desc" : "Event1 description"
+		},
+		{
+			"id"   : 1,
+			"dateend" : "2016-11-31",
+			"hourend" : "23:59",
+			"name" : "Event2",
+			"desc" : "Event2 description"
+		},
+		{
+			"id"   : 2,
+			"dateend" : "2016-12-25",
+			"hourend" : "23:59",
+			"name" : "Christmas",
+			"desc" : "Merry christmas!"
+		},
+		{
+			"id"   : 3,
+			"dateend" : "2016-12-31",
+			"hourend" : "23:59",
+			"name" : "New Year",
+			"desc" : "Happy new year!"
+		}
+	]
+}

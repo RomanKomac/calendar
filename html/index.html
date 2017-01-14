@@ -5,81 +5,86 @@
 		<title>eCalendar</title>
 		<meta name="description" content="Spletna aplikacija/koledar" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./css/responsive.css" />
-		<link rel="stylesheet" href="./css/default.css" />
+		<link rel="stylesheet" href="/css/responsive.css" />
+		<link rel="stylesheet" href="/css/default.css" />
+		<script type="text/javascript" src="/script/angular.js"></script>
+		<script type="text/javascript" src="/script/index.js"></script>
+		<script type="text/javascript" src="/script/warnings_dir.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
 	</head>
 	<body>
-		<div>
+		<div data-ng-app="mainpage">
+			<figure id="warnings" data-warnings="4">
+			</figure>
 			<header id="mainbar">
 				<div id="mainlogo"></div>
 				<div id="maintitle">eCalendar</div>
 				<!--Ce user nima vkljucenega javascripta lahko submita preko php na server-->
 				<div>
-					<input type="checkbox" name="checkbox" id="register" class="reg" value="value">
+					<input type="checkbox" name="checkbox" id="register" class="reg" value="value"/>
 					<label for="register" class="submit inline right-abs s-hide m-hide">Register</label>
 					
-					<input type="checkbox" name="checkbox" id="login" class="log" value="value">
+					<input type="checkbox" name="checkbox" id="login" class="log" value="value"/>
 					<label for="login" class="submit inline right-abs s-hide m-hide">Login</label>
 					
-					<div class="registerWindow">
+					<div class="registerWindow" data-ng-controller="register">
 						<div class="curtain"></div>
 						<div class="center-wrap full-height">
 							<div class="inputWindow center regInputWindow">
 								<label for="register" class="close">X</label>
-								<form class="inline right-abs" action="./login.html" method="post">
+								<form class="inline right-abs" action="/register" method="post" data-register-form>
 									<noscript>
-										<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"></input>
+										<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"/>
 									</noscript>
 									
 									<label for="uname">Username</label>
-									<input type="text" name="username" placeholder="Username" id="uname" class="input-text full-width marg"></input>
+									<input type="text" name="username" placeholder="Username" id="uname" class="input-text full-width marg" data-ng-model="username"/>
 									
 									<label for="mail">Mail</label>
-									<input type="email" name="mail" placeholder="Mail" id="mail" class="input-text full-width marg"></input>
+									<input type="email" name="mail" placeholder="Mail" id="mail" class="input-text full-width marg" data-ng-model="mail"/>
 									
-									<label for="gnd">Gender</label>
+									<label>Gender</label>
 									<ul class="gender-select marg" id="gnd">
 										<li>
-											<input type="radio" id="male" name="period" checked/>
+											<input type="radio" id="male" name="gend" value="male" data-ng-model="gend" checked/>
 											<label for="male">Male</label>
 										</li>
 										<li>
-											<input type="radio" id="female" name="period"/>
+											<input type="radio" id="female" name="gend" value="female" data-ng-model="gend"/>
 											<label for="female">Female</label>
 										</li>
 										<li>
-											<input type="radio" id="other" name="period" />
+											<input type="radio" id="other" name="gend" value="other" data-ng-model="gend"/>
 											<label for="other">Other</label>
-											<input type="text" name="genderopt" placeholder="Custom" id="genderopt" class="input-text full-width"></input>
+											<input type="text" name="genderopt" placeholder="Specify" id="genderopt" class="input-text full-width" data-ng-model="genderopt"/>
 										</li>
 									</ul>
 									
-									<label for="pwd">Password</label>
-									<input type="password" name="password1" placeholder="Input password" class="input-text full-width marg"></input>
-									<input type="password" name="password2" placeholder="Reinput password" class="input-text full-width"></input>
-									<div id="submitCenter" class="center-wrap">
-										<input type="submit" value="Register" class="submit center no-margin"></input>
+									<label>Password</label>
+									<input type="password" name="password1" placeholder="Input password" class="input-text full-width marg" data-ng-model="password1"/>
+									<input type="password" name="password2" placeholder="Reinput password" class="input-text full-width" data-ng-model="password2"/>
+									<div class="center-wrap submitCenter">
+										<input type="submit" value="Register" class="submit center no-margin" data-ng-click="submit($event)"/>
 									</div>
 								</form>
 							</div>
 						</div>
 					</div>
 					
-					<div class="loginWindow">
+					<div class="loginWindow" data-ng-controller="login">
 						<div class="curtain"></div>
 						<div class="center-wrap full-height">
 							<div class="inputWindow center">
 								<label for="login" class="close">X</label>
-								<form class="inline right-abs" action="./login.html" method="post">
+								<form class="inline right-abs" action="login" method="post" data-login-form>
 									<noscript>
-										<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"></input>
+										<input type="text" name="js" value="F" class="s-hide m-hide l-hide w-hide"/>
 									</noscript>
 									<div class="userFrame"></div>
-									<input type="text" name="username" placeholder="Username" class="input-text full-width"></input>
-									<input type="password" name="password" placeholder="Password" class="input-text full-width"></input>
-									<div id="submitCenter" class="center-wrap">
-										<input type="submit" value="Login" class="submit center no-margin"></input>
+									<input type="text" name="username" placeholder="Username" class="input-text full-width" data-ng-model="username"/>
+									<input type="password" name="password" placeholder="Password" class="input-text full-width" data-ng-model="password"/>
+									<div class="center-wrap submitCenter">
+										<input type="submit" value="Login" class="submit center no-margin" data-ng-click="submit($event)"/>
 									</div>
 								</form>
 							</div>
@@ -92,9 +97,6 @@
 					<div class="center turn-page">31</div>
 					<div class="dentist"></div>
 					Never miss another appointment with your dentist. With eCalendar you can plan everything in advance and avoid getting into pesky situations. <br/> Join today, be thankful tomorrow! <br/>
-					<!--Never forget your friend's birthday. With eCalendar you can plan everything in advance and avoid getting into pesky situations. Join today, be thankful tomorrow! <br/>
-					Never miss a party. With eCalendar you can plan everything in advance. Join today, be thankful tomorrow! <br/>
-					Never be late again. With eCalendar you can plan everything in advance and avoid getting into pesky situations. Join today, be thankful tomorrow! <br/>-->
 				</div>
 				<div class="s2 m2 l-hide w-hide full-height"></div>
 				<div class="s8 m8 l-hide w-hide relative full-height">

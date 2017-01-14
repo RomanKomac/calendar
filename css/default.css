@@ -177,7 +177,7 @@ html, body {
 	margin-top: 20px;
 }
 
-floater {
+.floater {
 	box-sizing: border-box;
 	height: 70px;
 	width: 70px;
@@ -218,40 +218,40 @@ floater {
 	display: none;
 }
 
-#groups-users:checked ~ #detailed>#detailed-pic{
+#m-users:checked ~ div #detailed>#detailed-pic{
 	background-image: url("../svg/person.svg");
 }
-#groups-users:checked ~ #detailed>#detailed-data-user{
+#m-users:checked ~ div  #detailed>#detailed-data-user{
 	display: block;
 }
-#groups-users:checked ~ #detailed>#detailed-data-circle, #groups-users:checked ~ #detailed>#detailed-data-event{
+#m-users:checked ~ div  #detailed>#detailed-data-circle, #m-users:checked ~ div  #detailed>#detailed-data-event{
 	display: none;
 }
 
-#groups-circles:checked  ~ #detailed>#detailed-pic {
+#m-circles:checked  ~ div  #detailed>#detailed-pic {
 	background-image: url("../svg/circles.svg");
 }
-#groups-circles:checked ~ #detailed>#detailed-data-circle{
+#m-circles:checked  ~ div #detailed>#detailed-data-circle{
 	display: block;
 }
-#groups-circles:checked ~ #detailed>#detailed-data-user, #groups-circles:checked ~ #detailed>#detailed-data-event{
+#m-circles:checked  ~ div #detailed>#detailed-data-user, #m-circles:checked  ~ div #detailed>#detailed-data-event{
 	display: none;
 }
 
-#groups-events:checked  ~ #detailed>#detailed-pic {
+#m-events:checked  ~ div  #detailed>#detailed-pic {
 	background-image: url("../svg/pencil-transp.svg");
 }
-#groups-events:checked ~ #detailed>#detailed-data-event{
+#m-events:checked  ~ div #detailed>#detailed-data-event{
 	display: block;
 }
-#groups-events:checked ~ #detailed>#detailed-data-circle, #groups-events:checked ~ #detailed>#detailed-data-user{
+#m-events:checked  ~ div #detailed>#detailed-data-circle, #m-events:checked ~ div  #detailed>#detailed-data-user{
 	display: none;
 }
 
-#groups-notifications:checked  ~ #detailed>#detailed-pic {
+#groups-notifications:checked  #detailed>#detailed-pic {
 	background-image: url("../svg/bell.svg");
 }
-#groups-notifications:checked ~ #detailed>#detailed-data-user, #groups-notifications:checked ~ #detailed>#detailed-data-circle, #groups-notifications:checked ~ #detailed>#detailed-data-event{
+#groups-notifications:checked #detailed>#detailed-data-user, #groups-notifications:checked #detailed>#detailed-data-circle, #groups-notifications:checked #detailed>#detailed-data-event{
 	display: none;
 }
 
@@ -323,9 +323,10 @@ floater {
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	height: calc(100% - 30px);
+	height: 100%;
 	width: 100%;
-	overflow: hidden;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 #main-bg {
@@ -394,7 +395,6 @@ floater {
 	left: 0px;
 	position: fixed;
 	display: none;
-	pointer-events: none;
 }
 
 .registerWindow:before {
@@ -434,7 +434,6 @@ floater {
 	z-index: 6;
 	box-sizing: border-box;
 	padding: 80px;
-	pointer-events: auto;
 }
 
 .close {
@@ -449,7 +448,7 @@ floater {
 
 .side-list {
 	position: relative;
-	width: 160;
+	width: 160px;
 	height: calc(50% - 90px);
 	margin: 20px;
 	margin-top: 60px;
@@ -463,6 +462,7 @@ floater {
 	height: 100%;
 	margin: 0px;
 	margin-top: 30px;
+	overflow-y: scroll;
 }
 
 .side-list-c>li {
@@ -488,10 +488,12 @@ floater {
 .side-list-e {
 	width: 100%;
 	height: 25px;
+	color: white;
 }
 
 .solid-border {
 	border: 1px solid #eee;
+	box-sizing: border-box;
 }
 
 .turn-page {
@@ -516,13 +518,13 @@ floater {
 	font-size: 15px;
 }
 
-#submitCenter {
+.submitCenter {
 	margin: 0px;
 	height: 60px;
 	width: 100%;
 }
 
-#submitCenter>input {
+.submitCenter>input {
 	margin: 0px !important;
 	width: 60px;
 	height: 35px;
@@ -534,6 +536,18 @@ floater {
 
 .marg {
 	margin-bottom: 8px !important;
+}
+
+.zero-margin {
+	margin: 0px !important;
+}
+
+.hide-overflow {
+	overflow: hidden !important;
+}
+
+.auto-overflow {
+	height: auto !important;
 }
 
 .create {
@@ -749,12 +763,73 @@ floater {
 	bottom:0;
 }
 
+.repeatable {
+	padding: 5px;
+	background-color: #4286f4;
+	border-radius: 5px;
+	overflow: hidden;
+	height: 100px;
+	color: white;
+	margin-bottom: 3px;
+	cursor: pointer;
+}
+
+.repeatable *{
+	position: relative;
+	width: 100%;
+	word-wrap:break-word;
+	white-space: normal !important;
+	margin-bottom: 5px;
+}
+
 .mobile-selection input[type="radio"] {
 	display: none;
 	z-index:5;
 }
 
-.mobile-selection input[type="radio"]:checked + label {
+#marks {
+	height: 30px;
+}
+
+
+#m-circles, #m-events, #m-users{
+	display: none;
+}
+
+#m-circles:checked ~ div #circles-grid {
+	display: block;
+}
+#m-circles:checked ~ div #users-grid, #m-circles:checked ~ div #events-grid{
+	display: none;
+}
+
+#m-users:checked ~ div #users-grid {
+	display: block;
+}
+#m-users:checked ~ div #circles-grid, #m-users:checked ~ div #events-grid{
+	display: none;
+}
+
+#m-events:checked ~ div #events-grid {
+	display: block;
+}
+#m-events:checked ~ div #users-grid, #m-events:checked ~ div #circles-grid{
+	display: none;
+}
+
+#m-circles:checked ~ div #m-circles-label {
+	background-size: 50px 50px;
+	background-position: 5px 5px; 
+	border-bottom: 3px solid black;
+}
+
+#m-events:checked ~ div #m-events-label {
+	background-size: 50px 50px;
+	background-position: 5px 5px; 
+	border-bottom: 3px solid black;
+}
+
+#m-users:checked ~ div #m-users-label {
 	background-size: 50px 50px;
 	background-position: 5px 5px; 
 	border-bottom: 3px solid black;

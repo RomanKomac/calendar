@@ -1,0 +1,40 @@
+{
+	"users" : {
+		"uporabnik1" :
+		{
+			"password" : "geslo",
+			"mail" : "uporabnik1@email.com",
+			"profile"  : "user.jpg",
+			"circles"  : [
+				{
+					"id" : 0
+				},
+				{
+					"id" : 5
+				}
+			]
+		},
+		"uporabnik2" :
+		{
+			"password" : "geslo",
+			"mail" : "uporabnik2@email.com",
+			"profile"  : "user.jpg",
+			"circles"  : [
+				{
+					"id" : 0
+				},
+				{
+					"id" : 5
+				}
+			]
+		}
+	},
+	"admins" : {
+		"admin1" :
+		{
+			"password" : "geslo",
+			"mail" : "admin@email.com",
+			"profile"  : "admin.jpg"
+		}
+	}
+}
