@@ -1,0 +1,82 @@
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:34:28"}
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:35:22"}
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:35:59"}
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:36:31"}
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:37:07"}
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:38:22"}
+{"level":"info","message":"User [admin] accessed the calendar page","timestamp":"02:41:01"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[admin] and Token:[f9c65bb6ceb48fc30ea7a53dab31c2afca681e49]","timestamp":"03:41:45"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"03:41:52"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[69688d3855b6fdf68ac12e91bfc800d6a250e176]","timestamp":"03:43:18"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"03:43:27"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[4fcdc24302ef5f51a3d23ef2a6c06bcfe25d1564]","timestamp":"03:46:13"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"03:46:19"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"03:54:08"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[2c374f4986c72c642672826e34288eda6abf7dc4]","timestamp":"03:55:51"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"03:55:56"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[66f4d34c25fc494be4d9f02411154b70cfbd227a]","timestamp":"04:04:50"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:04:55"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[df28506d8bb0f998c1dc389435028df2906ca269]","timestamp":"04:05:21"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:05:26"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[5123d88018d02c693502e12bddb26777132a5aa8]","timestamp":"04:06:09"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:06:13"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[a57e8fa21b47cfd420737b199266410227260cb7]","timestamp":"04:24:53"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:25:01"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:25:54"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[04751adb45362f9d5ea7ce6a57abd1558870a020]","timestamp":"04:26:03"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:26:09"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[dbdd40e3d4d739db38a92b2df28c869174210568]","timestamp":"04:28:21"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:28:26"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[9c016eec8981b843787a0e92ec537fb061d42b83]","timestamp":"04:29:03"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:29:08"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[a5f8d14de0cf69bf54d5616286e935899edcaa4b]","timestamp":"04:30:04"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:30:08"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:31:06"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[37a5ea99d38b6dc56738fb76e05d8e8da26d3671]","timestamp":"04:31:14"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:31:18"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[eb8f15d290358a153ac74f103912536b92b842c2]","timestamp":"04:33:13"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:33:17"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[a148d0ac477fdc12abd372d946c796daa1cae004]","timestamp":"04:34:06"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:34:10"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[c01c3fd1d2dde9922d97c362fed34a8efa41f43a]","timestamp":"04:34:34"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:34:39"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[ddf483a45b6ef8a9b6a15baf61eb0defc38ea291]","timestamp":"04:36:05"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:36:10"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[41fd8f24528f85934ac70ed15ad06ee461142b1e]","timestamp":"04:36:31"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:36:35"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[6f6a1be7d952ae9e0b3e9f9d9ec18c9717d27f73]","timestamp":"04:39:06"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:39:10"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[ab872709410fdbfd8c2fe21a5a72cba34f1dcdeb]","timestamp":"04:43:28"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:43:32"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[390d46218c3213d6cbaab8d06e0cd8a4fb63804f]","timestamp":"04:58:46"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"04:58:51"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:00:37"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:00:40"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:00:45"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:00:57"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:03:14"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:03:19"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:03:35"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:05:56"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:06:00"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:06:18"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:07:19"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:07:19"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:07:20"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:07:35"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:08:12"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:08:13"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:08:33"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:08:43"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:09:41"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:10:16"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the calendar page with User:[user] and Token:[7b85d1b00d72ffc874bb24ae2293ede93fd6b668]","timestamp":"05:11:04"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:11:08"}
+{"level":"warn","message":"[::ffff:127.0.0.1] tried to acces the admin page with User:[user] and Token:[9783092535d04a414d4448a7b45b4dac3c2bd4fb]","timestamp":"05:11:13"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:11:18"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:12:30"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:12:57"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:15:12"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:20:17"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:20:51"}
+{"level":"info","message":"User [user] accessed the calendar page","timestamp":"05:21:04"}

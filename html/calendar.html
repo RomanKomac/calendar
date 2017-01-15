@@ -15,7 +15,7 @@
 	<body>
 		<input type="radio" id="m-circles" name="mob"/>
 		<input type="radio" id="m-events" name="mob" checked/>
-		<div data-ng-app="my-app" data-ng-ctrl="my-ctrl">
+		<div data-ng-app="calendar" data-ng-controller="calctrl">
 			<figure id="warnings" data-warnings="4">
 			</figure>
 			<header id="mainbar">
@@ -46,7 +46,7 @@
 						<div id="circles"></div>
 						<ul class="side-list-c">
 							<li data-ng-repeat="circle in circles" class="side-list-e">
-								<div>{{circle.name}}</div>
+								<div>{{circle.circlename}}</div>
 							</li>
 						</ul>
 					</div>
@@ -54,7 +54,7 @@
 						<div id="h"></div>
 						<ul class="side-list-c">
 							<li data-ng-repeat="next in today" class="side-list-e">
-								<div>{{next.name}}</div>
+								<div>{{next.eventname}}</div>
 							</li>
 						</ul>
 					</div>
@@ -82,7 +82,7 @@
 								<label for="mail">Date</label>
 								<input type="date" value="2016-11-01" id="startev" name="search" class="input-text full-width marg" data-ng-model="startev">
 								
-								<input type="submit" value="Add event" class="submit" data-ng-click="addEvent"/>
+								<input type="submit" value="Add event" class="submit" data-ng-click="addEvent($event)"/>
 							</form>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 				<div id="topbar" class="s-hide m-hide">
 					<form class="s-hide m-hide search-form" action="./search.php" method="get">
 						<input type="date" value="2016-11-01" name="search" class="inline" data-ng-model="date">
-						<input type="submit" value="Show" class="submit inline" data-ng-click="searchEvents"/>
+						<input type="submit" value="Show" class="submit inline" data-ng-click="searchEvents($event)"/>
 					</form>
 					
 					<label for="create" class="submit inline create s-hide m-hide l-hide">Create</label>
@@ -98,31 +98,31 @@
 					<form class="time-period-form">
 						<ul class="time-period">
 							<li>
-								<input data-ng-model value="day" type="radio" id="day" name="period" />
+								<input data-ng-model="period" value="day" type="radio" id="day" name="period" />
 								<label for="day">Day</label>
 							</li>
 							<li>
-								<input data-ng-model value="week" type="radio" id="week" name="period" checked/>
+								<input data-ng-model="period" value="week" type="radio" id="week" name="period" checked/>
 								<label for="week">Week</label>
 							</li>
 							<li>
-								<input data-ng-model value="month" type="radio" id="month" name="period" />
+								<input data-ng-model="period" value="month" type="radio" id="month" name="period" />
 								<label for="month">Month</label>
 							</li>
 							<li>
-								<input data-ng-model value="agenda" type="radio" id="agenda" name="period" />
+								<input data-ng-model="period" value="agenda" type="radio" id="agenda" name="period" />
 								<label for="agenda">Agenda</label>
 							</li>
 						</ul>
 					</form>
 				</div>
-				<div id="mainb" class="m-hide s-hide" data-ng-style="{ overflow-y : flow }">
+				<div id="mainb" class="m-hide s-hide" data-ng-style="{ 'overflow-y' : flow }">
 					<div class="grid full-height gw7 gl7" data-ng-style="{ width : gridWidth }">
 						<div class="w1 l1 full-height solid-border" data-ng-repeat="day in days">
 							<div data-ng-repeat="event in day">
 								<div class="repeatable">
-									<div>{{event.name}}</div>
-									<div>{{event.desc}}</div>
+									<div>{{event.eventname}}</div>
+									<div>{{event.eventdesc}}</div>
 								</div>
 							</div>
 						</div>
@@ -132,23 +132,23 @@
 					<div id="events-grid" class="grid full-height">
 						<div class="m12 s12 full-height solid-border">
 							<div data-ng-repeat="event in events" class="repeatable">
-								<div>{{event.name}}</div>
-								<div>{{event.desc}}</div>
+								<div>{{event.eventname}}</div>
+								<div>{{event.eventdesc}}</div>
 							</div>
 						</div>
 					</div>
 					<div id="circles-grid" class="grid full-height">
 						<div class="m12 s12 full-height solid-border">
 							<div data-ng-repeat="circle in circlesmob" class="repeatable">
-								<div>{{circle.name}}</div>
-								<div>{{circle.desc}}</div>
+								<div>{{circle.circlename}}</div>
+								<div>{{circle.circledesc}}</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="float-button-tab" class="floater w-hide m-hide s-hide" data-ng-click="openDialog">
+				<div id="float-button-tab" class="floater w-hide m-hide s-hide" data-ng-click="openDialog()">
 				</div>
-				<div id="float-button-mob" class="floater w-hide l-hide" data-ng-click="openDialog">
+				<div id="float-button-mob" class="floater w-hide l-hide" data-ng-click="openDialog()">
 				</div>
 			</main>
 			<footer id="footerbar" class="s-hide m-hide l-hide">

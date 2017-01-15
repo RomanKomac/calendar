@@ -7,6 +7,12 @@ const models  = require('./models');
 const winston = require('winston');
 const logdir  = 'logs';
 
+// Add additional associations
+models.user.hasMany(models.eventuser);
+models.event.hasMany(models.eventuser);
+models.event.belongsToMany(models.user, {through: "eventuser"});
+models.user.belongsToMany(models.event, {through: "eventuser"});
+
 // Setting up app
 var app = express();
 app.use(bodyParser.json())
@@ -66,6 +72,61 @@ app.get('/debug', function(req, res) {
 	res.end();
 });
 
+// Retrieving viewable
+app.get('/admin/view/:id', function(req, res) {
+	rc = req.headers.cookie;
+	if(rc){
+		cookies = {};
+		rc.split(';').forEach(function(str){
+			var c = str.split('=');
+			cookies[c[0].trim()] = c[1].trim();
+		});
+		if(cookies["token"] && cookies["user"] && 
+		(admins[cookies["user"]] === cookies["token"])){
+			if(req.params.id === "users"){
+				
+			}
+			else if(req.params.id === "events"){
+				
+			}
+			else if(req.params.id === "circles"){
+				
+			}
+		}
+	}
+});
+
+app.get('/event', function(req, res) {
+	rc = req.headers.cookie;
+	if(rc){
+		cookies = {};
+		rc.split(';').forEach(function(str){
+			var c = str.split('=');
+			cookies[c[0].trim()] = c[1].trim();
+		});
+		if(cookies["token"] && cookies["user"] && 
+		(tokens[cookies["user"]] === cookies["token"] || admins[cookies["user"]] === cookies["token"])){
+			// Retrieving events
+			models.getEventsFromUser(cookies["user"], function(events){
+				models.getCirclesFromUser(cookies["user"], function(circles){
+					var cirs = {};
+					var evts = {};
+					for(var i = 0; i < events.length; i++){
+						evts[i] = events[i].dataValues;
+					}
+					for(var i = 0; i < circles.length; i++){
+						cirs[i] = circles[i].dataValues;
+					}
+					res.json({status: "ok", circles: cirs, events: evts});	
+					
+				});
+			});
+			
+			
+			return;
+		}
+	}
+});
 
 // GET request of calendar webpage
 app.get('/calendar', function (req, res) {
@@ -78,7 +139,7 @@ app.get('/calendar', function (req, res) {
 		});
 		if(cookies["token"] && cookies["user"] && 
 		(tokens[cookies["user"]] === cookies["token"] || admins[cookies["user"]] === cookies["token"])){
-			//successfully logged in, loading calendar page
+			// Successfully logged in, loading calendar page
 			res.sendFile(__dirname + "/html/calendar.html");
 			logger.info("User [" + cookies["user"] + "] accessed the calendar page");
 			return;
